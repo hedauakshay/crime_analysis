@@ -14,12 +14,24 @@ var express = require('express')
 
 var app = express();
 
+//Connecting Applicaiton to MongoDB
+var MongoClient = require('mongodb').MongoClient
+    , format = require('util').format;
+MongoClient.connect('mongodb://127.0.0.1:27017/test', function (err, db) {
+    if (err) {
+        throw err;
+    } else {
+        console.log("successfully connected to the database");
+    }
+    db.close();
+});
+
 // all environments
 //configure the sessions with our application
 app.use(session({   
 	  
 	cookieName: 'session',    
-	secret: 'cmpe273_test_string',    
+	secret: 'cmpe239_test_string',    
 	duration: 30 * 60 * 1000,    
 	activeDuration: 5 * 60 * 1000,  }));
 app.set('port', process.env.PORT || 3000);
@@ -42,10 +54,16 @@ if ('development' === app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/homepage',login.redirectToHomepage);
+app.get('/graph',login.redirectToGraph);
+app.get('/pie',login.redirectToPie);
+app.get('/day',login.redirectToDonut);
+app.get('/heatMap',login.redirectToheatMap);
+app.get('/safe_time',login.safe_time);
+app.get('/getRecommendationRes',login.getRecommendationRes);
 
 //POST
 app.post('/checklogin',login.checklogin);
-app.post('/logout',login.logout);
+app.get('/logout',login.logout);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crime Data Analysis</title>
+    <meta name="description" content="Website for recommending crime rates in San Francisco, California" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+	<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+	<link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+
+	
+	<!-- Loading the AngularJS file from /public/angularJS folder -->
+	<script src="angularjs/safe_time.js"></script>
+    <link rel="stylesheet" href="/css/styles2.css" />
+    <style>
+    	.cancelbtn {
+	    background-color: #f44336;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 100%;
+	    
+	    
+	}
+    </style>
+  </head>
+  <body ng-app="safe" ng-controller="safe_control">
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/"><i class="ion-ios-analytics-outline"></i> Crime Data</a>
+            </div>
+            <div class="navbar-collapse collapse" id="bs-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <h3>Welcome <%= username %></h3>
+                    </li>
+                    <li>
+                        <button class="cancelbtn" onclick="logout()" style="width:auto;">Log Off</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="first">
+        <div class="header-content">
+            <div class="inner">	
+				
+				<div class="row">
+					
+					<div class="col-xs-2">
+					</div>
+					
+					<div class="col-md-8">
+					<form class="form-horizontal">
+					<fieldset>
+						<legend style="color:white; font-weight:bold; font-size:25px;">Know  SF, california !</legend>
+						<div class="form-group col-xs-12 pull-left">
+				            <div class="col-xs-3">
+							    <label class="control-label pull-right">Time</label>
+				            </div>
+				            <div class="col-xs-9">
+							    <input type="text" placeholder="HH:MM" class="form-control timepicker input-small" ng-model="time_val">
+				                </div>
+						</div>
+						<div class="form-group col-xs-12">
+				            <div class="col-xs-3">
+							    <label class="col-xs-3 control-label pull-right">Area</label>
+				            </div>
+				            <div class="col-xs-9">
+							   <select class="form-control" ng-model="area">
+							        <option value="PARK">PARK</option>
+							        <option value="CENTRAL">CENTRAL</option>
+							        <option value="RICHMOND">RICHMOND</option>
+							        <option value="SOUTHERN">SOUTHERN</option>
+							        <option value="TARAVAL">TARAVAL</option>
+							        <option value="MISSION">MISSION</option>
+							        <option value="BAYVIEW">BAYVIEW</option>
+							        <option value="NORTHERN">NORTHERN</option>
+							        <option value="INGLESIDE">INGLESIDE</option>
+							        <option value="TENDERLOIN">TENDERLOIN</option>
+							    </select>
+				            </div>
+						</div>
+						<!-- Button -->
+						<div class="form-group col-xs-12">
+						  <label class="col-xs-3 xs-label" for="submit"></label>
+						  <div class="col-xs-9">
+							<button id="submit" name="submit" ng-click="submit()" class="btn btn-success">Check Now</button>
+						  </div>
+						</div>
+					</fieldset>
+					</form>
+					</div>
+					
+					<div class="col-xs-2">
+					</div>
+					
+				</div>
+				<div class="row">
+				<div class="form-group col-xs-12">
+				<h2><b><span ng-bind="warning"></span></b></h2>
+				<h3><b><span ng-bind="name"></span></b></h3>
+				<table class="table table-bordered"  style="text-align: center" ng-show="formSubmitted">
+				    <thead class="thead-inverse" >
+				      <tr>
+				        <th>Crime Category</th>
+				        <th>Crime Description</th>
+				        <th>Crime Location</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+					  <tr ng-repeat="a1 in arr_cat track by $index"  align="left">
+					    <td >{{a1}}</td>
+					    <td >{{arr_desc[$index]}}</td>
+					    <td >{{arr_add[$index]}}</td>
+					  </tr>
+				    </tbody>
+				  </table>
+				</div>
+				</div>
+            </div>
+        </div>
+    </header>
+    <!--scripts loaded here from cdn for performance -->
+    <script>
+    	var timepicker = new TimePicker('time', {
+		  lang: 'en',
+		  theme: 'dark'
+		});
+		timepicker.on('change', function(evt) {
+		  
+		  var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+		  evt.element.value = value;
+		
+		});
+    </script>
+	<script>
+		function logout()
+		{
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			    window.location.href = '/logout';
+			}
+		}
+	</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crime Data Analysis</title>
+    <meta name="description" content="Website for recommending crime rates in San Francisco, California" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+	<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" ></script>
+
+	
+	<!-- Loading the AngularJS file from /public/angularJS folder -->
+	<script src="angularjs/donut.js"></script>
+    <link rel="stylesheet" href="/css/styles2.css" />
+    <style>
+    	.cancelbtn {
+	    background-color: #f44336;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 100%;
+	    
+	    
+	}
+    </style>
+  </head>
+  <body ng-app="donut"  ng-controller="donut_control" ng-init="data=<%= data2 %>;data2=<%= data %>;onload();">
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/"><i class="ion-ios-analytics-outline"></i> Crime Data</a>
+            </div>
+            <div class="navbar-collapse collapse" id="bs-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <h3>Welcome <%= username %></h3>
+                    </li>
+                    <li>
+                        <button class="cancelbtn" onclick="logout()" style="width:auto;">Log Off</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+				
+				<h2 style="text-align:center;color:white;">Donut</h2>
+				<div class="row">
+					
+					<div class="col-md-3">
+					</div>
+					
+					<div class="col-md-8">
+				    	
+				        <!-- <hr style="margin-top:2px;margin-bottom:2px;" > -->
+				        <div class="container" >
+				            <div id="map" style="height:600px ;width:700px ;"></div>
+				        </div>
+				        
+														
+					</div>
+					
+					<div class="col-md-1">
+					</div>
+					
+				</div>
+				<hr style="padding:5x;">
+				<div class="row">
+					
+					<div class="col-md-3">
+					</div>
+					
+					<div class="col-md-8">
+				    	
+				        <!-- <hr style="margin-top:2px;margin-bottom:2px;" > -->
+				        <div class="container" >
+				            <div id="map2" style="height:600px ;width:700px ;"></div>
+				        </div>
+														
+					</div>
+					
+					<div class="col-md-1">
+					</div>
+					
+				</div>
+    <!--scripts loaded here from cdn for performance -->
+	<script>
+		function logout()
+		{
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			    window.location.href = '/logout';
+			}
+		}
+	</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

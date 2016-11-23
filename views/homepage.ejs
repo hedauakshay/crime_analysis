@@ -1,31 +1,463 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel='stylesheet' href='/stylesheets/style.css' />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<link rel='stylesheet' href='/stylesheets/style.css' />
-<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<meta http-equiv="Cache-Control"
-	content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<title>Welcome</title>
-</head>
-<body>
-	<div class="row">
-		<div class="col-md-12">
-			<form action="logout" method="post">
-				<h4>Welcome to the Portal, <%= username %></h4>
-				<input type="submit" value="Logout"  class="btn btn-success"/>
-			</form>
-		</div>
-	</div>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Crime Data Analysis</title>
+    <meta name="description" content="Website for recommending crime rates in San Francisco, California" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <script
+    src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <!-- Loading the AngularJS file from /public/angularJS folder -->
+    <script src="angularjs/login.js"></script>
+    <link rel="stylesheet" href="/css/styles2.css" />
+    <style>
+        .cancelbtn {
+        background-color: #f44336;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    </style>
+  </head>
+  <body ng-app="home">
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-analytics-outline"></i> Crime Data</a>
+            </div>
+            <div class="navbar-collapse collapse" id="bs-navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="page-scroll" href="#one">Intro</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#two">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#three">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#last">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" id="mymodal" data-toggle="modal" title="Description about us" href="#aboutModal">About Us</a>
+                    </li>
+                    <li>
+                        <h3>Welcome <%= username %></h3>
+                    </li>
+                    <li>
+                        <button class="cancelbtn" onclick="logout()" style="width:auto;">Log Off</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="first">
+        <div class="header-content">
+            <div class="inner">
+                <h1 class="cursive">Crime Data Analysis</h1>
+                <h4>Recommending crime statistics in San Francisco, California</h4>
+                <hr>
+                <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Toggle Video</a>
+            </div>
+        </div>
+        <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" id="video-background">
+            <source src="/images/golden.mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+    </header>
+    <section class="bg-primary" id="one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                    <h2 class="margin-top-0 text-primary">Crime Analysis in San Francisco, California </h2>
+                    <br>
+                    <p class="text-faded">
+                        The mission of the Crime Analysis is to provide timely and accurate tactical, strategic, administrative and operational intelligence analysis of data relating to crime in support of the agency’s goals and community oriented policing efforts. The CAU is responsible for determining and monitoring criminal activity in the City of Hayward and communicating the information to Command Staff, Patrol, Investigations and other sections and units as needed for the suppression of criminal activities, aiding the investigative process and increasing apprehension of offenders.    
+                    </p>
+                    <a href="#three" class="btn btn-default btn-xl page-scroll">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="margin-top-0 text-primary">Services</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 text-center" style="cursor: pointer;"  onclick="window.location='/heatMap';">
+                    <div class="feature">
+                        <i class="icon-lg ion-earth wow fadeInUp" data-wow-delay=".4s"></i>
+                        <h3>Heat Map</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 text-center" style="cursor: pointer;" onclick="window.location='/graph';">
+                    <div class="feature">
+                        <i class="icon-lg ion-pie-graph wow fadeIn" data-wow-delay=".3s"></i>
+                        <h3>Graphs</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 text-center" style="cursor: pointer;" onclick="window.location='/safe_time';">
+                    <div class="feature">
+                        <i class="icon-lg ion-help-circled wow fadeInUp" data-wow-delay=".4s"></i>
+                        <h3>Know San Francisco</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 text-center" style="cursor: pointer;" onclick="window.location='/pie';">
+                    <div class="feature">
+                        <i class="icon-lg ion-ios-pie wow fadeIn" data-wow-delay=".3s" href="/">
+                        <h3>Pie Charts</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                        </i>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-center" style="cursor: pointer;" onclick="window.location='/day';">
+                    <div class="feature">
+                        <i class="icon-lg ion-help-buoy wow fadeIn" data-wow-delay=".3s" href="/">
+                        <h3>Donut</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="three" class="no-padding">
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="https://i.ytimg.com/vi/01f4nfVBOhI/maxresdefault.jpg">
+                        <img src="https://i.ytimg.com/vi/01f4nfVBOhI/maxresdefault.jpg" class="img-responsive" alt="Image 1">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://totalnewswire.com/files/2015/10/Crime.jpg">
+                        <img src="http://totalnewswire.com/files/2015/10/Crime.jpg" class="img-responsive" alt="Image 2">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://pictures.ozy.com/pictures/1280x720fit/3/4/1/87341_instituteforensicscience_aw_295.jpg">
+                        <img src="http://pictures.ozy.com/pictures/1280x720fit/3/4/1/87341_instituteforensicscience_aw_295.jpg" class="img-responsive" alt="Image 3">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://wbtv.images.worldnow.com/images/11926634_G.jpg">
+                        <img src="http://wbtv.images.worldnow.com/images/11926634_G.jpg" class="img-responsive" alt="Image 4">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://pictures.ozy.com/pictures/1280x720fit/3/4/4/87344_instituteforensicscience_aw_396.jpg">
+                        <img src="http://pictures.ozy.com/pictures/1280x720fit/3/4/4/87344_instituteforensicscience_aw_396.jpg" class="img-responsive" alt="Image 5">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://emilygauselaw.com/uploads/3/6/7/2/3672505/5596776_orig.jpg">
+                        <img src="http://emilygauselaw.com/uploads/3/6/7/2/3672505/5596776_orig.jpg" class="img-responsive" alt="Image 6">
+                        <div class="gallery-box-caption">
+                            <div class="gallery-box-content">
+                                <div>
+                                    <i class="icon-lg ion-ios-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2 class="text-primary">Technology Used</h2>
+            </div>
+            <br>
+            <hr/>
+            <br>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <h4 class="wide-space text-center">BASED ON THESE STANDARDS</h4>
+                        <div class="col-sm-3 col-xs-6 text-center">
+                            <i class="icon-lg ion-social-html5-outline" title="html 5"></i>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 text-center">
+                            <i class="icon-lg ion-social-sass" title="sass"></i>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 text-center">
+                            <i class="icon-lg ion-social-javascript-outline" title="javascript"></i>
+                        </div>
+                        <div class="col-sm-3 col-xs-6 text-center">
+                            <i class="icon-lg ion-social-css3-outline" title="css 3"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section id="last">
+        <div class="container">
+            <div class="row">
+            <table style = "height: 10%; width: 80%; text-align: center; margin: 0 auto; padding:70px;">
+                <tr>
+                    <td>
+                        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/CrimeTracker" data-widget-id="799353063874007041">#CrimeTracker Tweets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </td>
+                    
+                </tr>
+            
+            
+            </table>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="margin-top-0 wow fadeIn">Get in Touch</h2>
+                    <hr class="primary">
+                    <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <form class="contact-form row">
+                        <div class="col-md-4">
+                            <label></label>
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col-md-4">
+                            <label></label>
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="col-md-4">
+                            <label></label>
+                            <input type="text" class="form-control" placeholder="Phone">
+                        </div>
+                        <div class="col-md-12">
+                            <label></label>
+                            <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <label></label>
+                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 column">
+                    <h4>Information</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="">Products</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Benefits</a></li>
+                        <li><a href="">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-3 column">
+                    <h4>About</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 column">
+                    <h4>Stay Posted</h4>
+                    <form>
+                        <div class="form-group">
+                          <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-3 text-right">
+                    <h4>Follow</h4>
+                    <ul class="list-inline">
+                      <li><a rel="nofollow" href="" title="Twitter"><i class="icon-lg ion-social-twitter-outline"></i></a>&nbsp;</li>
+                      <li><a rel="nofollow" href="" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a>&nbsp;</li>
+                      <li><a rel="nofollow" href="" title="Dribble"><i class="icon-lg ion-social-dribbble-outline"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <span class="pull-right text-muted small"><a href="/">Crime Data Analysis</a> ©2016 Data Miners</span>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div id="aboutModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">About Us</h4>
+                    <h4>Data Miners</h4>
+                    <h4>Crime analysis of San Francisco, California</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/akshay.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Akshay Hedau</b></i></h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/bal.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Bal Krisna</b></i></h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/ruchi.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Ruchi Gupta</b></i></h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/Sneha.JPG" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Sneha Jain</b></i></h3>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/abhiruchi.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Abhiruchi Lanjewar</b></i></h3>
+                        </div>
+                    </div>
+                    </div>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="//placehold.it/1200x700/222?text=..." id="galleryImage" class="img-responsive" />
+                <p>
+                    <br/>
+                    <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close <i class="ion-android-close"></i></button>
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="alertModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h2 class="text-center">Nice Job!</h2>
+                <p class="text-center">You clicked the button</p>
+                <p class="text-center">Crime Analysis</p>
+                <br/>
+                <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">OK <i class="ion-android-close"></i></button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--scripts loaded here from cdn for performance -->
+    <script>
+        function logout()
+        {
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                window.location.href = '/logout';
+            }
+        }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="/js/scripts.js"></script>
+  </body>
 </html>

@@ -143,9 +143,10 @@ footer {
 
 .navbar-default .nav > li>a,
 .navbar-default .nav>li>a:focus {
+	
     text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: bold;
     color: #eee;
 }
 

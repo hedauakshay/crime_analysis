@@ -24,15 +24,15 @@ login.controller('login', function($scope, $http) {
 			}
 			else
 				//Making a get call to the '/redirectToHomepage' API
+				console.log("egergr");
 				$http({
 					method : "GET",
 					url : 'http://127.0.0.1:5000/getData'
 					}).success(function (data2) {
 						$scope.backend_data = data;
-						//console.log(data);
-				
-						window.location.assign("/homepage_login_suc");
 						console.log(data2);
+				
+						window.location.assign("/homepage");
 					}) 
 		}).error(function(error) {
 			$scope.unexpected_error = false;

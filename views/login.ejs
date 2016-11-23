@@ -9,19 +9,13 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-    <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script
+	<script
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script
+	<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<!-- Loading the AngularJS file from /public/angularJS folder -->
-<script src="angularjs/login.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<!-- Loading the AngularJS file from /public/angularJS folder -->
+	<script src="angularjs/login.js"></script>
     <link rel="stylesheet" href="/css/styles2.css" />
   </head>
   <style>
@@ -159,7 +153,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" data-toggle="modal" title="Description about us" href="#aboutModal">About Us</a>
+                        <a class="page-scroll" id="mymodal" data-toggle="modal" title="Description about us" href="#aboutModal">About Us</a>
                     </li>
                     <li>
                         <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -175,7 +169,7 @@
         <div class="header-content">
             <div class="inner">
                 <h1 class="cursive">Crime Data Analysis</h1>
-                <h4>Recommending crime in San Francisco, California</h4>
+                <h4>Recommending crime statistics in San Francisco, California</h4>
                 <hr>
                 <a href="#video-background" id="toggleVideo" data-toggle="collapse" class="btn btn-primary btn-xl">Toggle Video</a>
             </div>
@@ -188,10 +182,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
-                    <h2 class="margin-top-0 text-primary">Built On The Bootstrap Grid</h2>
+                    <h2 class="margin-top-0 text-primary">Crime Analysis in San Francisco, California </h2>
                     <br>
                     <p class="text-faded">
-                        Bootstrap's responsive grid comes in 4 sizes or "breakpoints": tiny (xs), small(sm), medium(md) and large(lg). These 4 grid sizes enable you create responsive layouts that behave accordingly on different devices.
+                    	The mission of the Crime Analysis is to provide timely and accurate tactical, strategic, administrative and operational intelligence analysis of data relating to crime in support of the agency’s goals and community oriented policing efforts. The CAU is responsible for determining and monitoring criminal activity in the City of Hayward and communicating the information to Command Staff, Patrol, Investigations and other sections and units as needed for the suppression of criminal activities, aiding the investigative process and increasing apprehension of offenders.    
                     </p>
                     <a href="#three" class="btn btn-default btn-xl page-scroll">Learn More</a>
                 </div>
@@ -202,32 +196,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">Flexible Layouts</h2>
+                    <h2 class="margin-top-0 text-primary">Services</h2>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 text-center">
+                <div class="col-lg-3 col-md-3 text-center" style="cursor: pointer;" >
                     <div class="feature">
-                        <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Responsive</h3>
-                        <p class="text-muted">Your site looks good everywhere</p>
+                        <i class="icon-lg ion-earth wow fadeInUp" data-wow-delay=".4s"></i>
+                        <h3>Heat Map</h3>
+                        <p class="text-muted">Crime Analysis</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 text-center">
+                <div class="col-lg-3 col-md-3 text-center" style="cursor: pointer;" >
                     <div class="feature">
-                        <i class="icon-lg ion-social-sass wow fadeInUp" data-wow-delay=".2s"></i>
-                        <h3>Customizable</h3>
-                        <p class="text-muted">Easy to theme and customize with SASS</p>
+                        <i class="icon-lg ion-pie-graph wow fadeIn" data-wow-delay=".3s"></i>
+                        <h3>Graphs</h3>
+                        <p class="text-muted">Crime Analysis</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 text-center">
+                <div class="col-lg-3 col-md-3 text-center" style="cursor: pointer;">
                     <div class="feature">
-                        <i class="icon-lg ion-ios-star-outline wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Consistent</h3>
-                        <p class="text-muted">A mature, well-tested, stable codebase</p>
+                        <i class="icon-lg ion-earth wow fadeInUp" data-wow-delay=".4s"></i>
+                        <h3>Web GL Globe</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 text-center" style="cursor: pointer;">
+                    <div class="feature">
+                        <i class="icon-lg ion-ios-pie wow fadeIn" data-wow-delay=".3s"></i>
+                        <h3>Pie Charts</h3>
+                        <p class="text-muted">Crime Analysis</p>
+                        </i>
                     </div>
                 </div>
             </div>
@@ -237,8 +239,8 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="//splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d">
-                        <img src="//splashbase.s3.amazonaws.com/unsplash/regular/photo-1430916273432-273c2db881a0%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3Df047e8284d2fdc1df0fd57a5d294614d" class="img-responsive" alt="Image 1">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="https://i.ytimg.com/vi/01f4nfVBOhI/maxresdefault.jpg">
+                        <img src="https://i.ytimg.com/vi/01f4nfVBOhI/maxresdefault.jpg" class="img-responsive" alt="Image 1">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -249,8 +251,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="//splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg">
-                        <img src="//splashbase.s3.amazonaws.com/getrefe/regular/tumblr_nqune4OGHl1slhhf0o1_1280.jpg" class="img-responsive" alt="Image 2">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://totalnewswire.com/files/2015/10/Crime.jpg">
+                        <img src="http://totalnewswire.com/files/2015/10/Crime.jpg" class="img-responsive" alt="Image 2">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -261,8 +263,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="//splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4">
-                        <img src="//splashbase.s3.amazonaws.com/unsplash/regular/photo-1433959352364-9314c5b6eb0b%3Fq%3D75%26fm%3Djpg%26w%3D1080%26fit%3Dmax%26s%3D3b9bc6caa190332e91472b6828a120a4" class="img-responsive" alt="Image 3">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://pictures.ozy.com/pictures/1280x720fit/3/4/1/87341_instituteforensicscience_aw_295.jpg">
+                        <img src="http://pictures.ozy.com/pictures/1280x720fit/3/4/1/87341_instituteforensicscience_aw_295.jpg" class="img-responsive" alt="Image 3">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -273,8 +275,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg">
-                        <img src="//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-moto-drawing-illusion-nabeel-1440x960.jpg" class="img-responsive" alt="Image 4">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://wbtv.images.worldnow.com/images/11926634_G.jpg">
+                        <img src="http://wbtv.images.worldnow.com/images/11926634_G.jpg" class="img-responsive" alt="Image 4">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -285,8 +287,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg">
-                        <img src="//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-new-york-crosswalk-nabeel-1440x960.jpg" class="img-responsive" alt="Image 5">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://pictures.ozy.com/pictures/1280x720fit/3/4/4/87344_instituteforensicscience_aw_396.jpg">
+                        <img src="http://pictures.ozy.com/pictures/1280x720fit/3/4/4/87344_instituteforensicscience_aw_396.jpg" class="img-responsive" alt="Image 5">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -297,8 +299,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg">
-                        <img src="//splashbase.s3.amazonaws.com/lifeofpix/regular/Life-of-Pix-free-stock-photos-clothes-exotic-travel-nabeel-1440x960.jpg" class="img-responsive" alt="Image 6">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="http://emilygauselaw.com/uploads/3/6/7/2/3672505/5596776_orig.jpg">
+                        <img src="http://emilygauselaw.com/uploads/3/6/7/2/3672505/5596776_orig.jpg" class="img-responsive" alt="Image 6">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -314,8 +316,7 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2 class="text-primary">Get Started</h2>
-                <a href="http://www.bootstrapzero.com/bootstrap-template/landing-zero" target="ext" class="btn btn-default btn-lg wow flipInX">Free Download</a>
+                <h2 class="text-primary">Technology Used</h2>
             </div>
             <br>
             <hr/>
@@ -323,7 +324,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
-                        <h6 class="wide-space text-center">BOOTSTRAP IS BASED ON THESE STANDARDS</h6>
+                        <h4 class="wide-space text-center">BASED ON THESE STANDARDS</h4>
                         <div class="col-sm-3 col-xs-6 text-center">
                             <i class="icon-lg ion-social-html5-outline" title="html 5"></i>
                         </div>
@@ -428,9 +429,84 @@
                 </div>
             </div>
             <br/>
-            <span class="pull-right text-muted small"><a href="http://www.bootstrapzero.com">Landing Zero by BootstrapZero</a> ©2015 Company</span>
+            <span class="pull-right text-muted small"><a href="/">Crime Data Analysis</a> ©2016 Data Miners</span>
         </div>
     </footer>
+    
+    <div id="aboutModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">About Us</h4>
+                    <h4>Data Miners</h4>
+                    <h4>Crime analysis of San Francisco, California</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/akshay.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Akshay Hedau</b></i></h3>
+                            <h4 >I am Akshay Hedau, Software Developer at Harman International.</h4>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/akshay.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Bal Krisna</b></i></h3>
+                            <h4 >I am Akshay Hedau, Software Developer at Harman International.</h4>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/ruchi.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Ruchi Gupta</b></i></h3>
+                            <h4 >I am Ruchi Gupta, Software Developer at Google Inc.</h4>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/akshay.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Sneha Jain</b></i></h3>
+                            <h4 >I am Akshay Hedau, Software Developer at Harman International.</h4>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="container col-md-12" style="padding-top:30px;" >
+                    <div class="row">
+                        <div class="col-md-4">  
+                            <img src="/images/abhiruchi.jpg" align="left" alt="Smiley face" height="180" width="180"/>
+                        </div>
+                        <div class="col-md-8">
+                        	<h3><i><b>Abhiruchi Lanjewar</b></i></h3>
+                            <h4 >I am Abhiruchi Lanjewar, .....</h4>
+                        </div>
+                    </div>
+                    </div>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
     <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -444,22 +520,15 @@
         </div>
         </div>
     </div>
-    <div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
+    <div id="alertModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
         <div class="modal-content">
         	<div class="modal-body">
-        		<h2 class="text-center">Landing Zero Theme</h2>
-        		<h5 class="text-center">
-        		    A free, responsive landing page theme built by BootstrapZero.
-        		</h5>
-        		<p class="text-justify">
-        		    This is a single-page Bootstrap template with a sleek dark/grey color scheme, accent color and smooth scrolling.
-        		    There are vertical content sections with subtle animations that are activated when scrolled into view using the jQuery WOW plugin. There is also a gallery with modals
-        		    that work nicely to showcase your work portfolio. Other features include a contact form, email subscribe form, multi-column footer. Uses Questrial Google Font and Ionicons.
-        		</p>
-        		<p class="text-center"><a href="http://www.bootstrapzero.com">Download at BootstrapZero</a></p>
+        		<h2 class="text-center">Nice Job!</h2>
+        		<p class="text-center">You clicked the button</p>
+        		<p class="text-center">Crime Analysis</p>
         		<br/>
-        		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true"> OK </button>
+        		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">OK <i class="ion-android-close"></i></button>
         	</div>
         </div>
         </div>
@@ -501,19 +570,6 @@
 	
 	  </form>
 	</div>
-    <div id="alertModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-        	<div class="modal-body">
-        		<h2 class="text-center">Nice Job!</h2>
-        		<p class="text-center">You clicked the button, but it doesn't actually go anywhere because this is only a demo.</p>
-        		<p class="text-center"><a href="http://www.bootstrapzero.com">Learn more at BootstrapZero</a></p>
-        		<br/>
-        		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">OK <i class="ion-android-close"></i></button>
-        	</div>
-        </div>
-        </div>
-    </div>
     <!--scripts loaded here from cdn for performance -->
     <script>
 		// Get the modal
