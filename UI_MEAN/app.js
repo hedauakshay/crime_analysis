@@ -17,7 +17,8 @@ var app = express();
 //Connecting Applicaiton to MongoDB
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
-MongoClient.connect('mongodb://127.0.0.1:27017/test', function (err, db) {
+    var url = 'mongodb://hedauakshay:hedauakshay@ds113628.mlab.com:13628/cmpe239';
+MongoClient.connect(url, function (err, db) {
     if (err) {
         throw err;
     } else {

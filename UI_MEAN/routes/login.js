@@ -11,7 +11,7 @@ var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
 //Connection URL. This is where your mongodb server is running.
-var url = 'mongodb://localhost:27017/cmpe239';
+var url = 'mongodb://hedauakshay:hedauakshay@ds113628.mlab.com:13628/cmpe239';
 
 var crimeData_ID = [];
 
@@ -62,6 +62,7 @@ exports.checklogin = function(req,res)
 					    var mongoRes = [];
 					    // Find Collections
 					    for (var i = 0; i < crimeData_ID.length; i++) {
+					    	console.log(crimeData_ID[i]);
 						    collection.find({IncidentId: crimeData_ID[i]}).toArray(function (err, result) {
 						      if (err) {
 						        console.log(err);
