@@ -16,14 +16,35 @@
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 	<script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
 	<link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
-
+	<script src="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css"></script> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.‌​2/css/bootstrap.min.‌​css">
 	
 	<!-- Loading the AngularJS file from /public/angularJS folder -->
 	<script src="angularjs/safe_time.js"></script>
     <link rel="stylesheet" href="/css/styles2.css" />
     <style>
+    
+    .highlight {
+    background-color: lightblue;
+	}
+	.highlight2 {
+    background-color: black;
+	}
+	
+	
+	/* supersede bootstrap at the row level by being annoyingly specific 
+	*/
+	.table-striped > tbody > tr:nth-child(odd).highlight > td {
+	    background-color: lightblue;
+	}
+	
+	/* supersede bootstrap at the cell level by being annoyingly specific */
+	.table-striped > tbody > tr:nth-child(odd) > td.highlight {
+	    background-color:lightblue;
+	}
+    
     	.cancelbtn {
-	    background-color: #f44336;
+	    background-color: lightblue;
 	    color: white;
 	    padding: 14px 20px;
 	    margin: 8px 0;
@@ -69,7 +90,7 @@
 					</div>
 					
 					<div class="col-md-8">
-					<form class="form-horizontal">
+					<form class="form-horizontal" style="position:relative;">
 					<fieldset>
 						<legend style="color:white; font-weight:bold; font-size:25px;">Know  SF, california !</legend>
 						<div class="form-group col-xs-12 pull-left">
@@ -78,7 +99,7 @@
 				            </div>
 				            <div class="col-xs-9">
 							    <input type="text" placeholder="HH:MM" class="form-control timepicker input-small" ng-model="time_val">
-				                </div>
+				            </div>
 						</div>
 						<div class="form-group col-xs-12">
 				            <div class="col-xs-3">
@@ -118,16 +139,16 @@
 				<div class="form-group col-xs-12">
 				<h2><b><span ng-bind="warning"></span></b></h2>
 				<h3><b><span ng-bind="name"></span></b></h3>
-				<table class="table table-bordered"  style="text-align: center" ng-show="formSubmitted">
-				    <thead class="thead-inverse" >
-				      <tr>
+				<table class="table table-striped" cellspacing="0" width="100%" ng-show="formSubmitted">
+				    <thead >
+				      <tr class="highlight2">
 				        <th>Crime Category</th>
 				        <th>Crime Description</th>
 				        <th>Crime Location</th>
 				      </tr>
 				    </thead>
 				    <tbody>
-					  <tr ng-repeat="a1 in arr_cat track by $index"  align="left">
+					  <tr class="highlight" ng-repeat="a1 in arr_cat track by $index"  align="left">
 					    <td >{{a1}}</td>
 					    <td >{{arr_desc[$index]}}</td>
 					    <td >{{arr_add[$index]}}</td>
@@ -140,18 +161,6 @@
         </div>
     </header>
     <!--scripts loaded here from cdn for performance -->
-    <script>
-    	var timepicker = new TimePicker('time', {
-		  lang: 'en',
-		  theme: 'dark'
-		});
-		timepicker.on('change', function(evt) {
-		  
-		  var value = (evt.hour || '00') + ':' + (evt.minute || '00');
-		  evt.element.value = value;
-		
-		});
-    </script>
 	<script>
 		function logout()
 		{

@@ -4,6 +4,13 @@
 var http = require('http');
 var request = require('request');
 
+// Load the twilio module
+var twilio = require('twilio');
+
+// Create a new REST API client to make authenticated requests against the
+// twilio back end
+var client = new twilio.RestClient('ACfd5018d5a5e9b6fc3699b45743a348f3', 'be678f4abbab829bd4a8d5ada4ad38db');
+
 //lets require/import the mongodb native drivers.
 var mongodb = require('mongodb');
 
@@ -31,6 +38,30 @@ exports.checklogin = function(req,res)
 		console.log(username+" "+password);
 		if(username === "akshay" && password === "akshay")
 		{
+			// Pass in parameters to the REST API using an object literal notation. The
+			// REST client will handle authentication and response serialzation for you.
+			client.sms.messages.create({
+			    to:'+14086684854',
+			    from:'+14083594185',
+			    body:username+' has Logged in'
+			}, function(error, message) {
+			    // The HTTP request to Twilio will run asynchronously. This callback
+			    // function will be called when a response is received from Twilio
+			    // The "error" variable will contain error information, if any.
+			    // If the request was successful, this value will be "falsy"
+			    if (!error) {
+			        // The second argument to the callback will contain the information
+			        // sent back by Twilio for the request. In this case, it is the
+			        // information about the text messsage you just sent:
+			        console.log('Success! The SID for this SMS message is:');
+			        console.log(message.sid);
+			 
+			        console.log('Message sent on:');
+			        console.log(message.dateCreated);
+			    } else {
+			        console.log('Oops! There was an error.');
+			    }
+			});
 			//Assigning the session
 			username.toUpperCase();
 			req.session.username = username;
@@ -185,6 +216,95 @@ exports.getRecommendationRes = function(req, res)
 	var crimeData_ID = [];
 	
 	res.send(ary);
+}
+
+exports.getKnowSF = function(req, res)
+{
+	console.log(req.body.from);
+	console.log(req.body.body);
+	console.log(ary.length);
+	
+	var body = req.body.body;
+	var message = body.split(" "); 
+ 
+	var input_time = message[0];
+	var input_area = message[1];
+	
+	var alert;
+	var out_cat = [];
+    var out_desc = [];
+    var out_add = [];
+    var out_time = [];
+    var map_district = new Object();
+    for(var i = 0; i< ary.length; i++)
+    {
+        var district = ary[i].data.PdDistrict;
+        var time = ary[i].data.Time;
+        var hh = parseInt(input_time);
+
+        if((hh >= (parseInt(time)-1) && hh <= (parseInt(time)+1)) && district == input_area)
+        {
+            out_desc.push(ary[i].data.Category);
+            out_add.push(ary[i].data.Address);
+            out_time.push(time);
+        }            
+    }      
+
+    if(out_desc.length==0)
+    {
+    	alert = "SAFE!";
+        console.log("SAFE!");
+    }else if(out_desc.length>=4){
+    	alert = "UNSAFE!";
+        console.log("UNSAFE!");
+    }else{
+    	alert = "BE CAREFULL!";
+        console.log("BE CAREFULL!");
+    }
+		
+    var unique = out_desc.filter(function(elem, index, self) {
+	    return index == self.indexOf(elem);
+	})
+
+    var inci = unique.join(", ");
+    if(out_desc.length != 0){
+    	inci = "RECENT INCIDENTS : "+inci;
+    }else{
+    	inci = "NO RECENT INCIDENTS";
+    }
+    
+    
+	var from = req.body.from;
+	var body = req.body.body;
+	var TMClient = require('textmagic-rest-client');
+	  
+//	var c = new TMClient('akshayhedau', 'E0v96SjGGmFTQzeU1D8NwBGk1vVgE3');
+//	c.Messages.send({text: 'Alert : '+alert+ '\n PAST INCIDENTS : '+inci, phones:from}, function(err, res){
+//	    console.log('Messages.send()', err, res);
+//	});
+	client.sms.messages.create({
+			    to: from,
+			    from:'+14083594185',
+			    body: '\n'+'Alert : '+alert+ '\n'+inci
+			}, function(error, message) {
+			    // The HTTP request to Twilio will run asynchronously. This callback
+			    // function will be called when a response is received from Twilio
+			    // The "error" variable will contain error information, if any.
+			    // If the request was successful, this value will be "falsy"
+			    if (!error) {
+			        // The second argument to the callback will contain the information
+			        // sent back by Twilio for the request. In this case, it is the
+			        // information about the text messsage you just sent:
+			        console.log('Success! The SID for this SMS message is:');
+			        console.log(message.sid);
+			 
+			        console.log('Message sent on:');
+			        console.log(message.dateCreated);
+			    } else {
+			        console.log('Oops! There was an error.');
+			    }
+			});
+	console.log("Message Received");
 }
 
 exports.redirectToheatMap = function(req, res)

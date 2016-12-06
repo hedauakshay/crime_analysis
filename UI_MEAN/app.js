@@ -34,7 +34,7 @@ app.use(session({
 	cookieName: 'session',    
 	secret: 'cmpe239_test_string',    
 	duration: 30 * 60 * 1000,    
-	activeDuration: 5 * 60 * 1000,  }));
+	activeDuration: 5 * 60 * 1000  }));
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -61,6 +61,7 @@ app.get('/day',login.redirectToDonut);
 app.get('/heatMap',login.redirectToheatMap);
 app.get('/safe_time',login.safe_time);
 app.get('/getRecommendationRes',login.getRecommendationRes);
+app.post('/knowSF', login.getKnowSF);
 
 //POST
 app.post('/checklogin',login.checklogin);

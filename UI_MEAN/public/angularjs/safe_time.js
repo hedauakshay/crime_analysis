@@ -35,7 +35,7 @@ login.controller('safe_control', function($scope, $http) {
 //					console.log(time);
 //					console.log(parseInt(time)-1);
 //					console.log(parseInt(time)+1);
-//					console.log(hh);
+					console.log(hh);
 					if((hh >= (parseInt(time)-1) && hh <= (parseInt(time)+1)) && district == input_area)
 					{
 						//console.log("Matched");
@@ -78,10 +78,10 @@ login.controller('safe_control', function($scope, $http) {
 					$scope.warning = "SAFE!";
 					$scope.formSubmitted = false;
 				}else if(out_cat.length>=4){
-					$scope.warning = "UNSAFE";
+					$scope.warning = "UNSAFE!";
 					$scope.formSubmitted = true;
 				}else{
-					$scope.warning = "BE CAAREFULL!";
+					$scope.warning = "BE CAREFULL!";
 					$scope.formSubmitted = true;
 				}
 				
@@ -89,7 +89,7 @@ login.controller('safe_control', function($scope, $http) {
 				
 					
 				console.log(out_cat);
-				$scope.name = " "+out_cat.length+" Incidents in "+ input_area +" around "+ input_time;
+				$scope.name = "Few recent Incidents in "+ input_area +" around "+ input_time;
 			    var final_chart = [];
 			    
 			    for(var i=0; i < out_time.length; i++) {
